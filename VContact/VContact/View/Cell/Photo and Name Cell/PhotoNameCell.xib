@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" selectionStyle="none" indentationWidth="10" reuseIdentifier="PhotoNameType" id="KGk-i7-Jjw" customClass="PhotoNameCell" customModule="VContact" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cND-Fi-mRf">
+                        <rect key="frame" x="59" y="17" width="246" height="20.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="first_name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYI-md-b6P">
+                                <rect key="frame" x="0.0" y="0.0" width="117.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="last_name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9eG-Id-55S">
+                                <rect key="frame" x="127.5" y="0.0" width="118.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hi9-ms-4V7" customClass="ShadowForAvatar" customModule="VContact" customModuleProvider="target">
+                        <rect key="frame" x="5" y="5" width="44" height="44"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mvZ-Lh-8h4">
+                                <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mikky2" translatesAutoresizingMaskIntoConstraints="NO" id="yDD-yj-Y06">
+                                <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="9VN-hV-Y2N"/>
+                                    <constraint firstAttribute="height" constant="44" id="h7i-Tr-dEf"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mvZ-Lh-8h4" firstAttribute="leading" secondItem="Hi9-ms-4V7" secondAttribute="leading" id="05W-FU-SeY"/>
+                            <constraint firstAttribute="width" secondItem="Hi9-ms-4V7" secondAttribute="height" multiplier="1:1" id="1iF-wj-l6P"/>
+                            <constraint firstAttribute="trailing" secondItem="yDD-yj-Y06" secondAttribute="trailing" id="7sT-Wk-dKn"/>
+                            <constraint firstItem="mvZ-Lh-8h4" firstAttribute="top" secondItem="Hi9-ms-4V7" secondAttribute="top" id="WOV-Be-6YS"/>
+                            <constraint firstAttribute="bottom" secondItem="yDD-yj-Y06" secondAttribute="bottom" id="Z0F-z7-Dje"/>
+                            <constraint firstAttribute="trailing" secondItem="mvZ-Lh-8h4" secondAttribute="trailing" id="d87-5p-GSC"/>
+                            <constraint firstItem="yDD-yj-Y06" firstAttribute="top" secondItem="Hi9-ms-4V7" secondAttribute="top" id="nGe-81-YKD"/>
+                            <constraint firstAttribute="bottom" secondItem="mvZ-Lh-8h4" secondAttribute="bottom" id="vg0-hg-pho"/>
+                            <constraint firstItem="yDD-yj-Y06" firstAttribute="leading" secondItem="Hi9-ms-4V7" secondAttribute="leading" id="wfK-H7-aRd"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="widthShadow">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="opacityShadow">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="avatar" destination="yDD-yj-Y06" id="4ZJ-UL-JPk"/>
+                            <outlet property="shadowView" destination="mvZ-Lh-8h4" id="e5Z-N0-4tC"/>
+                        </connections>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Hi9-ms-4V7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="1TG-XA-coF"/>
+                    <constraint firstAttribute="trailing" secondItem="cND-Fi-mRf" secondAttribute="trailing" constant="15" id="5WV-vK-tbF"/>
+                    <constraint firstItem="cND-Fi-mRf" firstAttribute="leading" secondItem="Hi9-ms-4V7" secondAttribute="trailing" constant="10" id="6OP-Ku-ciB"/>
+                    <constraint firstAttribute="bottom" secondItem="Hi9-ms-4V7" secondAttribute="bottom" constant="5" id="G4E-xK-dx3"/>
+                    <constraint firstItem="cND-Fi-mRf" firstAttribute="centerY" secondItem="Hi9-ms-4V7" secondAttribute="centerY" id="fCz-uM-7ij"/>
+                    <constraint firstItem="Hi9-ms-4V7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="oo2-Of-gR2"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="avatar" destination="yDD-yj-Y06" id="Kek-9m-iQO"/>
+                <outlet property="avatarShadow" destination="mvZ-Lh-8h4" id="Upw-EN-cny"/>
+                <outlet property="first_name" destination="bYI-md-b6P" id="yDc-tj-jfV"/>
+                <outlet property="last_name" destination="9eG-Id-55S" id="Yw6-J6-iLP"/>
+                <outlet property="rootView" destination="H2p-sc-9uM" id="7ST-Gr-3tX"/>
+                <outlet property="shadowForAvatar" destination="Hi9-ms-4V7" id="u6i-rU-aEL"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Mikky2" width="275" height="183"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
