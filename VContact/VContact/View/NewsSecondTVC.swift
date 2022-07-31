@@ -1,31 +1,22 @@
 //
-//  NewsTableViewController.swift
+//  NewsSecondTVC.swift
 //  VContact
 //
-//  Created by Wally on 23.05.2022.
+//  Created by Mikhail Shendrikov on 31.07.2022.
 //
 
 import UIKit
 
-class NewsTableViewController: UITableViewController {
+class NewsSecondTVC: UITableViewController {
 
-    var allNewsArr = [News(avatarPhoto: UIImage(named: "Chapoklyak")!, nameUser: "Chapoklyak", dateNews: "23.05.2022", textNews: "Chinese rover finds new evidence of water on Mars.", imageNews: UIImage(named: "Chapoklyak23.05.2022")!, likeImage: UIImage(systemName: "heart")!, countLike: 0)]
-    
-        
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UINib(nibName: "NewsTableViewCell", bundle: nil), forCellReuseIdentifier: "NewsCellType")
-    
-        let session = VKService()
-        session.getNewsfeed(complation: ){ response in
-            for element in response {
-                let news = News(avatarPhoto: UIImage(named: "Chapoklyak")!, nameUser: "Chapoklyak", dateNews: String(element.date), textNews: element.text, imageNews: UIImage(named: "Chapoklyak")!, likeImage: UIImage(systemName: "heart")!, countLike: 0)
-                self.allNewsArr.append(news)
-            }
-            self.tableView.reloadData()
-        }
-        
-        
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -37,23 +28,35 @@ class NewsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return allNewsArr.count
+        return 4
     }
 
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCellType", for: indexPath) as! NewsTableViewCell
-        cell.avatarPhoto.image = allNewsArr[indexPath.row].avatarPhoto
-        cell.nameUser.text = allNewsArr[indexPath.row].nameUser
-        cell.dateNews.text = allNewsArr[indexPath.row].dateNews
-        cell.textNews.text = allNewsArr[indexPath.row].textNews
-        cell.imageNews.image = allNewsArr[indexPath.row].imageNews
-        self.view.layoutIfNeeded()
-        cell.likeImage.image = allNewsArr[indexPath.row].likeImage
-        cell.countLike.text = String(allNewsArr[indexPath.row].countLike)
-        
-        
-        return cell
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AvatarNameDateOfPublicCell", for: indexPath) as! AvatarNameDateOfPublicCell
+
+            cell.avatar?.image = UIImage(named: "Chapoklyak")
+            cell.name?.text = "Chapoklyak"
+            cell.dateOfPublic?.text = "31/07/2022"
+
+            return cell
+        } else if indexPath.row == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TextNewsCell", for: indexPath) as! TextNewsCell
+            cell.textOfNews?.text = "Вот и новости"
+            return cell
+        } else if indexPath.row == 2 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoNewsCell", for: indexPath) as! PhotoNewsCell
+            cell.photoOfNews?.image = UIImage(named: "Chapoklyak")
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Like_CommentCell", for: indexPath) as! Like_CommentCell
+            cell.comment?.text = "Количество комментариев:"
+            return cell
+        }
+       
     }
+    
 
     /*
     // Override to support conditional editing of the table view.

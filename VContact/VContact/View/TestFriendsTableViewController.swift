@@ -12,8 +12,7 @@ class TestFriendsTableViewController: UITableViewController {
     let service = VKService()
     var friends: [FriendsNew]? {
         didSet {
-            print("Array did update")
-            print(friends?.count)
+           
             getAvatar()
         }
     }
@@ -33,7 +32,7 @@ class TestFriendsTableViewController: UITableViewController {
                 let jSon = try JSONDecoder().decode(ResponseFriendNew.self, from: data)
                 let tmpFriends = jSon.response.items
                 self.friends = tmpFriends
-                print("friends was changed $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
+               
                 } catch {
                     print(error.localizedDescription)
                 }
@@ -42,7 +41,7 @@ class TestFriendsTableViewController: UITableViewController {
     }
     
     func getAvatar() {
-        print("\(self.friends?.count) $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
+       
         guard let friends = self.friends else { return }
         for friend in friends {
             DispatchQueue.global().async {

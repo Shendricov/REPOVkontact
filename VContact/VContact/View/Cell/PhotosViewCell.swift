@@ -14,13 +14,6 @@ class PhotosViewCell: UICollectionViewCell {
     @IBOutlet weak var countLike: UILabel!
     private var numberLikesTap: Int = 0
     
-    
-    override class func awakeFromNib() {
-        super.awakeFromNib()
-        
-    }
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         countLike.text = String(numberLikesTap)
